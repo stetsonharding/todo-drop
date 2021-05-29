@@ -1,0 +1,75 @@
+/* containers */
+.note-maker__maincontainer {
+  height: 40vh;
+}
+
+.note-maker__sub-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  justify-content: center;
+  width: 100%;
+}
+
+
+/* inputs */
+.note-maker__input-container {
+  width: 100%;
+  max-width: 800px;
+}
+
+#input_note,
+#input_title {
+  width: 100%;
+  padding: 0.7em;
+  border: none;
+  box-shadow: 2px 5px 8px #888888;
+  border: none;
+}
+
+#input_note,
+#input_title:focus {
+outline-width: 0;
+}
+
+
+/* Buttons */
+.note-maker__buttons-container{
+    padding: 1em;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content:flex-end; 
+}
+
+.note-maker__submit-button{
+    background-color: rgb(31, 115, 226);
+    color: white;
+}
+.note-maker__close-button{
+    background-color: rgb(226, 57, 6);
+    color: white;
+}
+
+.note-maker__submit-button,
+.note-maker__close-button{
+   padding: .4em;
+   width: 70px;
+   font-weight: 500;
+   border-radius: 4px;
+   cursor: pointer;
+   border: 1px solid black;
+   letter-spacing: 1px;
+   margin-right: 2em;
+}
+
+.note-maker__submit-button:hover,
+.note-maker__close-button:hover{
+  opacity: .9;
+}
+
+
+   
+
+
