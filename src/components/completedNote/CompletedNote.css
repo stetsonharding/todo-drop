@@ -1,0 +1,41 @@
+.completed-note__container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.completed-note__information-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  display: inline-block;
+  width: 250px;
+  height: 200px;
+  border: 3px dotted grey;
+  border-radius: 10px;
+  position: relative;
+  margin: 1em;
+}
+
+.completed-note__information {
+  padding: 1em;
+}
+
+/* button */
+.completed-note__edit {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  padding: 1em;
+}
+
+.completed-note_edit-button {
+  width: 50px;
+  padding: 0.4em;
+  cursor: pointer;
+  border-radius: 5px;
+}
