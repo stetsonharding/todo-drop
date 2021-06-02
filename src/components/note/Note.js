@@ -1,25 +1,30 @@
 import React from "react";
-import uuid from 'react-uuid'
+import uuid from "react-uuid";
 
 import "./Note.css";
 
-export default function Note({ note, setNote, title, setTitle, completedNote, setCompletedNote }) {
-
-
-  function submitNote(e){
-  e.preventDefault();
-    if(note || title !== ""){
-      setCompletedNote((prevState) =>[
+export default function Note({
+  note,
+  setNote,
+  title,
+  setTitle,
+  completedNote,
+  setCompletedNote,
+}) {
+  function submitNote(e) {
+    e.preventDefault();
+    if (note || title !== "") {
+      setCompletedNote((prevState) => [
         ...prevState,
-        {id: uuid(), title: title, note: note}
-      ])
+        { id: uuid(), title: title, note: note },
+      ]);
     }
 
-    setTitle("")
-    setNote("")
+    setTitle("");
+    setNote("");
   }
 
-  console.log(completedNote)
+  console.log(completedNote);
 
   return (
     <>
@@ -35,7 +40,11 @@ export default function Note({ note, setNote, title, setTitle, completedNote, se
         </div>
 
         <div className="note-maker__buttons-container">
-          <button className="note-maker__submit-button" type="submit"  onClick={submitNote}>
+          <button
+            className="note-maker__submit-button"
+            type="submit"
+            onClick={submitNote}
+          >
             Submit
           </button>
           <button className="note-maker__close-button">Close</button>

@@ -33,6 +33,7 @@
   padding: 1em;
 }
 
+.completed-note_Delete-button,
 .completed-note_edit-button {
   width: 50px;
   padding: 0.4em;

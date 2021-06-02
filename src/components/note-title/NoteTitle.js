@@ -3,16 +3,20 @@ import React, { useState, useEffect, useRef } from "react";
 import Note from "../note/Note";
 import "./NoteTitle.css";
 
-export default function NoteTitle({ title, setTitle, note, setNote, completedNote, setCompletedNote }) {
+export default function NoteTitle({
+  title,
+  setTitle,
+  note,
+  setNote,
+  completedNote,
+  setCompletedNote,
+}) {
   const [isNoteDisplayed, setIsNoteDisplayed] = useState(false);
-
-
-
 
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
 
-//hiding note when focused outside of inputs
+  //hiding note when focused outside of inputs
   function useOutsideAlerter(ref) {
     useEffect(() => {
       function handleClickOutside(event) {
@@ -30,9 +34,6 @@ export default function NoteTitle({ title, setTitle, note, setNote, completedNot
   }
 
 
-  // console.log(`title: ${title}`);
-  // console.log(`note: ${note}`);
-
   return (
     <>
       <div className="note-maker__maincontainer">
@@ -48,7 +49,16 @@ export default function NoteTitle({ title, setTitle, note, setNote, completedNot
                 onClick={() => setIsNoteDisplayed(true)}
               />
             </div>
-            {isNoteDisplayed ? <Note note={note} setNote={setNote} title={title} setTitle={setTitle} completedNote={completedNote} setCompletedNote={setCompletedNote} /> : null}
+            {isNoteDisplayed ? (
+              <Note
+                note={note}
+                setNote={setNote}
+                title={title}
+                setTitle={setTitle}
+                completedNote={completedNote}
+                setCompletedNote={setCompletedNote}
+              />
+            ) : null}
           </div>
         </div>
       </div>
