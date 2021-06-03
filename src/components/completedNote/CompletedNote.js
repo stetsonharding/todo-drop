@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./CompletedNote.css";
-import Modal from "../modal/Modal";
+import Modal from ".././modal/Modal";
 
 export default function CompletedNote({
   FullNote,
