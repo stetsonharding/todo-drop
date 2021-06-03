@@ -8,7 +8,6 @@ export default function Note({
   setNote,
   title,
   setTitle,
-  completedNote,
   setCompletedNote,
 }) {
   function submitNote(e) {
@@ -24,30 +23,27 @@ export default function Note({
     setNote("");
   }
 
-  console.log(completedNote);
-
   return (
     <>
       <div className="note__container">
-        <div className="note-maker__note">
-          <input
-            id="input_note"
-            type="text"
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-            placeholder="Take a note..."
-          />
-        </div>
+        <input
+          id="input_note"
+          placeholder="note..."
+          type="text"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          autoComplete="off"
+        />
 
-        <div className="note-maker__buttons-container">
+        <div className="note__buttons-container">
           <button
-            className="note-maker__submit-button"
+            className="note__submit-button"
             type="submit"
             onClick={submitNote}
           >
             Submit
           </button>
-          <button className="note-maker__close-button">Close</button>
+          <button className="note__close-button">Close</button>
         </div>
       </div>
     </>

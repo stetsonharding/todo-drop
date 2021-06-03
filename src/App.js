@@ -3,7 +3,7 @@ import "./App.css";
 
 import NoteTitle from "./components/note-title/NoteTitle";
 import CompletedNote from "./components/completedNote/CompletedNote";
-import Modal from "./components/modal/modal";
+
 
 export default function App() {
   const [title, setTitle] = useState("");
@@ -23,27 +23,19 @@ export default function App() {
       />
 
       <div className="completed-note__container">
-        {completedNote.map((note) => (
+        {completedNote.map((FullNote) => (
           <CompletedNote
-            key={note.id}
-            title={note.title}
-            note={note.note}
+            setNote={setNote}
             isModalShown={isModalShown}
             setIsModalShown={setIsModalShown}
             setCompletedNote={setCompletedNote}
             completedNote={completedNote}
+            FullNote={FullNote}
           />
         ))}
       </div>
 
-      {isModalShown ? (
-        <Modal
-          title={title}
-          note={note}
-          setCompletedNote={setCompletedNote}
-          CompletedNote={CompletedNote}
-        />
-      ) : null}
+ 
     </>
   );
 }

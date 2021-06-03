@@ -33,22 +33,24 @@ export default function NoteTitle({
     }, [ref]);
   }
 
-
   return (
     <>
-      <div className="note-maker__maincontainer">
-        <div className="note-maker__sub-container">
-          <div className="note-maker__input-container" ref={wrapperRef}>
-            <div className="note-maker__title">
-              <input
-                id="input_title"
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="Title..."
-                onClick={() => setIsNoteDisplayed(true)}
-              />
-            </div>
+      <div className="note-title__maincontainer">
+        <div className="note-title__sub-container">
+          <div className="note-title__title-wrapper">
+            <h1 className="note-title__title">Take a note</h1>
+          </div>
+
+          <div className="note-title__input-container" ref={wrapperRef}>
+            <input
+              id="input_title"
+              placeholder="Title..."
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              onClick={() => setIsNoteDisplayed(true)}
+              autoComplete="off"
+            />
             {isNoteDisplayed ? (
               <Note
                 note={note}
