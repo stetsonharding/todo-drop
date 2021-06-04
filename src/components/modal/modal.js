@@ -2,9 +2,14 @@ import React, { useState } from "react";
 
 import "./Modal.css";
 
-export default function Modal({ FullNote, setCompletedNote, setIsModalShown }) {
-  const [newTitle, setNewTitle] = useState(FullNote.title || "");
-  const [newNote, setNewNote] = useState(FullNote.note || "");
+export default function Modal({
+  FullNote,
+  setCompletedNote,
+  setIsModalShown,
+  selectedNote,
+}) {
+  const [newTitle, setNewTitle] = useState(FullNote.title);
+  const [newNote, setNewNote] = useState(FullNote.note);
 
   function editNoteCompleted(id, newTitle, newNote, e) {
     setCompletedNote((prevState) =>
@@ -31,7 +36,7 @@ export default function Modal({ FullNote, setCompletedNote, setIsModalShown }) {
         />
 
         <br />
-        
+
         <input
           type="text"
           value={newNote}

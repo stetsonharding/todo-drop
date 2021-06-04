@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./CompletedNote.css";
 import Modal from "../modal/Modal";
 
 export default function CompletedNote({
   FullNote,
-  isModalShown,
-  setIsModalShown,
   setCompletedNote,
 }) {
-  const showModal = () => {
+
+  const [isModalShown, setIsModalShown] = useState(false);
+
+  const editNote = () => {
+ 
     setIsModalShown(true);
   };
+
+
 
   return (
     <div key={FullNote.id} className="completed-note__information-container">
@@ -22,7 +26,7 @@ export default function CompletedNote({
       <div className="completed-note__edit">
         <button
           className="completed-note_edit-button"
-          onClick={() => showModal()}
+          onClick={() => editNote()}
         >
           Edit
         </button>
@@ -33,6 +37,7 @@ export default function CompletedNote({
           FullNote={FullNote}
           setCompletedNote={setCompletedNote}
           setIsModalShown={setIsModalShown}
+        
         />
       ) : null}
     </div>
