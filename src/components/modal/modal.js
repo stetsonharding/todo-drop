@@ -11,7 +11,10 @@ export default function Modal({
   const [newTitle, setNewTitle] = useState(FullNote.title);
   const [newNote, setNewNote] = useState(FullNote.note);
 
-  function editNoteCompleted(id, newTitle, newNote, e) {
+
+
+
+  const EditNoteCompleted =(id, newTitle, newNote, e)=>{
     setCompletedNote((prevState) =>
       prevState.map((n) => {
         if (n.id === id) {
@@ -46,7 +49,7 @@ export default function Modal({
         <div className="modal__button-container">
           <button
             className="modal__ok-button"
-            onClick={() => editNoteCompleted(FullNote.id, newTitle, newNote)}
+            onClick={() => EditNoteCompleted(FullNote.id, newTitle, newNote)}
           >
             Ok
           </button>

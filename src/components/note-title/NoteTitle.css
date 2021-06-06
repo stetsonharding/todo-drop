@@ -5,18 +5,17 @@
 }
 
 .note-title__title {
-  width: 12ch;
-  animation: typing 2s steps(15), blink 0.5s step-end infinite;
+  width: 26ch;
+  animation: typing 3s steps(20), step-end infinite;
   white-space: nowrap;
   overflow: hidden;
   font-family: monospace;
   font-size: 2em;
 }
 
-
 /* containers */
 .note-title__maincontainer {
-  height: 30vh;
+  height: 28vh;
 }
 
 .note-title__sub-container {
@@ -47,3 +46,13 @@
 }
 
 
+@media(max-width: 500px){
+  .note-title__title {
+    width: 26ch;
+    animation: typing 3s steps(20), step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: monospace;
+    font-size: 1.3em;
+  }
+}

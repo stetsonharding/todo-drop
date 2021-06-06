@@ -9,6 +9,7 @@ export default function App() {
   const [note, setNote] = useState("");
   const [completedNote, setCompletedNote] = useState([]);
   
+  console.log(completedNote)
 
   return (
     <>
@@ -24,6 +25,7 @@ export default function App() {
       <div className="completed-note__container">
         {completedNote.map((FullNote) => (
           <CompletedNote
+            key={FullNote.id}
             setCompletedNote={setCompletedNote}
             completedNote={completedNote}
             FullNote={FullNote}

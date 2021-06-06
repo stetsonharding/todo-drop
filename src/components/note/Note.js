@@ -10,8 +10,12 @@ export default function Note({
   setTitle,
   setCompletedNote,
 }) {
-  function submitNote(e) {
+
+
+
+  const SubmitNote =(e) =>{
     e.preventDefault();
+  
     if (note || title !== "") {
       setCompletedNote((prevState) => [
         ...prevState,
@@ -39,9 +43,9 @@ export default function Note({
           <button
             className="note__submit-button"
             type="submit"
-            onClick={submitNote}
+            onClick={SubmitNote}
           >
-            Submit
+            Take Note
           </button>
           <button className="note__close-button">Close</button>
         </div>

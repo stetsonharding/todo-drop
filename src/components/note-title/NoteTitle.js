@@ -14,10 +14,10 @@ export default function NoteTitle({
   const [isNoteDisplayed, setIsNoteDisplayed] = useState(false);
 
   const wrapperRef = useRef(null);
-  useOutsideAlerter(wrapperRef);
+  UseOutsideAlerter(wrapperRef);
 
   //hiding note when focused outside of inputs
-  function useOutsideAlerter(ref) {
+  function UseOutsideAlerter(ref) {
     useEffect(() => {
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
@@ -38,7 +38,7 @@ export default function NoteTitle({
       <div className="note-title__maincontainer">
         <div className="note-title__sub-container">
           <div className="note-title__title-wrapper">
-            <h1 className="note-title__title">Take a note</h1>
+            <h1 className="note-title__title">Take a note... drop a note</h1>
           </div>
 
           <div className="note-title__input-container" ref={wrapperRef}>

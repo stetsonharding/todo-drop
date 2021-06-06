@@ -1,9 +1,65 @@
+/*newly added items start faded out and translated 400px upwards on the y-axis*/
+.completed-note__information-container  {
+  opacity: 0;
+  animation: new-item-animation .3s linear forwards;
+}
+
+@keyframes new-item-animation {
+  from {
+      opacity: 0;
+      transform: translateY(-400px);
+}
+
+  to {
+      opacity: 1;
+      transform : translateY(0);
+  }
+}
+
+
+.completed-note__information-container-removed {
+  animation: removed-item-animation .7s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+  /*transform origin is moved to the bottom left corner*/
+  transform-origin: 0% 100%;
+}
+
+@keyframes removed-item-animation {
+  0% {
+      opacity: 1;
+      transform: rotateZ(0);
+}
+
+  100% {
+      opacity: 0;
+      transform: translateY(600px) rotateZ(90deg);
+  }
+}
+
+
+@keyframes removed-item-animation {
+  0% {
+      opacity: 1;
+      transform: rotateZ(0);
+}
+
+  100% {
+      opacity: 0;
+      transform: translateY(600px) rotateZ(90deg);
+  }
+}
+
+
+
+
+
+
 .completed-note__container {
   display: flex;
   justify-content: center;
   width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
+
 }
 
 .completed-note__information-container {
@@ -11,26 +67,43 @@
   flex-direction: row;
   align-items: flex-start;
   display: inline-block;
-  width: 250px;
+  width: 275px;
   height: 200px;
-  border: 3px dotted grey;
+  border: 2px outset black;
+  box-shadow: 2px 1px 1px 1px #888888;
   border-radius: 10px;
   position: relative;
   margin: 1em;
+ 
 }
 
-.completed-note__information {
-  padding: 1em;
+
+.completed-note__title{
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+ padding-bottom: .2em;
+ overflow-wrap: break-word;
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.completed-note__note{
+font-size: .9em;
+ padding: .5em 0 0 .5em;
+ color: black;
+ font-weight: bolder;
+ font-family: monospace
 }
 
 /* button */
-.completed-note__edit {
+.completed-note__button-container {
   display: flex;
   width: 100%;
   justify-content: flex-end;
   position: absolute;
   bottom: 0;
   padding: 1em;
+  
 }
 
 .completed-note_Delete-button,
@@ -39,4 +112,24 @@
   padding: 0.4em;
   cursor: pointer;
   border-radius: 5px;
+  margin: 0.1em
 }
+
+
+
+
+@media(max-width: 550px){
+  .completed-note__container {
+   margin-top: 2.5em;
+  
+  }
+}
+
+@media(max-width: 320px){
+.completed-note__button-container {
+flex-direction: column;
+}
+
+}
+
+

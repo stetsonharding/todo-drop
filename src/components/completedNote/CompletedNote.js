@@ -3,43 +3,50 @@ import React, { useState } from "react";
 import "./CompletedNote.css";
 import Modal from "../modal/Modal";
 
-export default function CompletedNote({
-  FullNote,
-  setCompletedNote,
-}) {
-
+export default function CompletedNote({ FullNote, setCompletedNote, completedNote }) {
   const [isModalShown, setIsModalShown] = useState(false);
-
-  const editNote = () => {
- 
+  const [toggleClass, setToggleClass] = useState(false)
+  const EditNote = () => {
     setIsModalShown(true);
   };
 
 
+const DeleteNote = (id) => {
+  setToggleClass(true)
+
+setTimeout(() => {
+  setCompletedNote(completedNote.filter(note => note.id !== id))
+}, 700);
+}
 
   return (
-    <div key={FullNote.id} className="completed-note__information-container">
+    <>
+    <div key={FullNote.id} className={toggleClass ? "completed-note__information-container-removed" :"completed-note__information-container" }>
       <div className="completed-note__information">
         <p className="completed-note__title">{FullNote.title}</p>
+        <hr />
         <p className="completed-note__note">{FullNote.note}</p>
       </div>
-      <div className="completed-note__edit">
+      <div className="completed-note__button-container">
         <button
           className="completed-note_edit-button"
-          onClick={() => editNote()}
+          onClick={() => EditNote()}
         >
           Edit
         </button>
-        <button className="completed-note_Delete-button">Delete</button>
+        <button className="completed-note_Delete-button" onClick={() =>DeleteNote(FullNote.id)}>Drop</button>
       </div>
-      {isModalShown ? (
+       </div>
+      <div>
+      {isModalShown && (
         <Modal
           FullNote={FullNote}
           setCompletedNote={setCompletedNote}
           setIsModalShown={setIsModalShown}
-        
+          setToggleClass={setToggleClass}
         />
-      ) : null}
-    </div>
+      )}
+      </div>
+      </>
   );
 }

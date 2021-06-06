@@ -4,7 +4,7 @@
   border: none;
   box-shadow: 2px 5px 8px #888888;
   border: none;
- 
+  
 }
 
 #input_note:focus {
@@ -33,7 +33,7 @@
   .note__submit-button,
   .note__close-button {
     padding: 0.4em;
-    width: 70px;
+    width: 82px;
     font-weight: 500;
     border-radius: 4px;
     cursor: pointer;
