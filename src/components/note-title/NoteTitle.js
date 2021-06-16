@@ -59,6 +59,7 @@ export default function NoteTitle({
                 setTitle={setTitle}
                 completedNote={completedNote}
                 setCompletedNote={setCompletedNote}
+                setIsNoteDisplayed={setIsNoteDisplayed}
               />
             ) : null}
           </div>

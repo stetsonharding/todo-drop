@@ -9,13 +9,11 @@ export default function Note({
   title,
   setTitle,
   setCompletedNote,
+  setIsNoteDisplayed,
 }) {
-
-
-
-  const SubmitNote =(e) =>{
+  const SubmitNote = (e) => {
     e.preventDefault();
-  
+
     if (note || title !== "") {
       setCompletedNote((prevState) => [
         ...prevState,
@@ -25,7 +23,7 @@ export default function Note({
 
     setTitle("");
     setNote("");
-  }
+  };
 
   return (
     <>
@@ -47,7 +45,12 @@ export default function Note({
           >
             Take Note
           </button>
-          <button className="note__close-button">Close</button>
+          <button
+            className="note__close-button"
+            onClick={() => setIsNoteDisplayed(false)}
+          >
+            Close
+          </button>
         </div>
       </div>
     </>
