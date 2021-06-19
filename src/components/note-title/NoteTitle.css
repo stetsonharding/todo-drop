@@ -39,14 +39,14 @@
   border: none;
   box-shadow: 2px 5px 8px #888888;
   border: none;
+  font-size: 1em;
 }
 
 #input_title:focus {
   outline-width: 0;
 }
 
-
-@media(max-width: 500px){
+@media (max-width: 500px) {
   .note-title__title {
     width: 26ch;
     animation: typing 3s steps(20), step-end infinite;

@@ -11,10 +11,7 @@ export default function Modal({
   const [newTitle, setNewTitle] = useState(FullNote.title);
   const [newNote, setNewNote] = useState(FullNote.note);
 
-
-
-
-  const EditNoteCompleted =(id, newTitle, newNote, e)=>{
+  const EditNoteCompleted = (id, newTitle, newNote, e) => {
     setCompletedNote((prevState) =>
       prevState.map((n) => {
         if (n.id === id) {
@@ -25,7 +22,7 @@ export default function Modal({
     );
 
     setIsModalShown(false);
-  }
+  };
 
   return (
     <div className="modal__container">
@@ -33,6 +30,7 @@ export default function Modal({
         <p>Edit Note:</p>
 
         <input
+          className="modal__input"
           type="text"
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
@@ -41,6 +39,7 @@ export default function Modal({
         <br />
 
         <input
+          className="modal__input"
           type="text"
           value={newNote}
           onChange={(e) => setNewNote(e.target.value)}

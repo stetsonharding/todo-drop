@@ -4,45 +4,44 @@
   border: none;
   box-shadow: 2px 5px 8px #888888;
   border: none;
-  
+  font-size: 1em;
 }
 
 #input_note:focus {
   outline-width: 0;
 }
 
-
 /* Buttons */
 .note__buttons-container {
-    padding: 1em;
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .note__submit-button {
-    background-color: rgb(31, 115, 226);
-    color: white;
-  }
-  .note__close-button {
-    background-color: rgb(226, 57, 6);
-    color: white;
-  }
-  
-  .note__submit-button,
-  .note__close-button {
-    padding: 0.4em;
-    width: 82px;
-    font-weight: 500;
-    border-radius: 4px;
-    cursor: pointer;
-    border: 1px solid black;
-    letter-spacing: 1px;
-    margin-right: 2em;
-  }
-  
-  .note__submit-button:hover,
-  .note__close-button:hover {
-    opacity: 0.9;
-  }
+  padding: 1em;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.note__submit-button {
+  background-color: rgb(31, 115, 226);
+  color: white;
+}
+.note__close-button {
+  background-color: rgb(226, 57, 6);
+  color: white;
+}
+
+.note__submit-button,
+.note__close-button {
+  padding: 0.4em;
+  width: 82px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid black;
+  letter-spacing: 1px;
+  margin-right: 2em;
+}
+
+.note__submit-button:hover,
+.note__close-button:hover {
+  opacity: 0.9;
+}
