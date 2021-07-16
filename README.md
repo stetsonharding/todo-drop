@@ -1,2 +1,1 @@
-Create a note, edit a note, and simply drop the note off the page when finished! I wanted to make this a little different than your ordinary "to-do" application. Built, fully with react functional components making use of the useState hook. Each component is passing props to diffrent components as needed, all while making sure state is not modified directly, then making sure state is getting updated in the correct components. Along side of this, i'm making use of some pretty cool CSS effects and animations all while being fully responsive to any screen size.
 
